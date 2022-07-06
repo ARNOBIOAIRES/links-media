@@ -1,0 +1,142 @@
+/* No inicio do código do css  é importante resetar os valores default.
+Assim, facilita inserir as medidas do projeto. Esse reset vale para algumas tags
+do htaml, como por exemplo a tag ancora <a>  */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    /*variáveis*/
+    --bg-color: #EDF2FF;
+    --text-color: #00082f;
+    --primary-color: #4263eb;
+    --primary-color-dark: #364fc7;
+}
+
+body.dark {
+    --bg-color: #00082f;
+    --text-color: #ffffff;
+}
+
+body.pink {
+    --bg-color: #fff0f6;
+    --text-color: #1f000b;
+    --primary-color: #d6336c;
+    --primary-color-dark: #a61e4d;
+}
+
+
+/* //as cores do texto foram definidas dentro de body, por meio do valor de uma 
+//variável; */
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+}
+
+div.container {
+    border: 1px red solid;
+    text-align: center;
+    width: 300px;
+    margin: 60px auto;
+    transition: opacity 400ms;
+}
+
+div.container:hover {
+    border: none;
+}
+
+img.avatar {
+    margin-top: 20px;
+    width: 90%;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    border: var(--primary-color) solid 4px;
+}
+
+h1 {
+    font-size: 32px;
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+.username {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    opacity: 0.8;
+    font-size: 18px;
+}
+
+ul {
+    list-style: none;
+    margin-top: 28px 0;
+}
+
+ul li a {
+    height: 53px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    /* HEX: 0 - F => zero é o preto absoluto e o f o branco absoluto */
+    color: white;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    transition: background 400ms;
+}
+
+
+/* subclass*
+obs quando utilizo a subclass hover, 
+a propriedade transition (recebe o valor tempo em ms)
+é aplicada na classe principal.
+*/
+
+ul li a:hover {
+    background: var(--primary-color-dark);
+    text-transform: lowercase;
+}
+
+footer {
+    font-weight: 500;
+    font-size: 12px;
+    opacity: 0.7;
+    transition: opacity 400ms;
+}
+
+footer:hover {
+    opacity: 1;
+}
+
+
+/*  
+a largura da tag img, se adaptar a div container 
+ 
+
+- A propriedade box-sizing tem 2 comportamentos para alterar valores de margens:
+border-box => considera o tamanho da caixa (e mélhor porque ajusta o que tem dentro da caixa)
+
+content-box => considera o conteúdo da caixa, ou seja a propriedade width vai se referir ao conteúdo, ou seja aumentando esse valor a caixa expande.
+
+Algumas caixas tem uma formas de DISPLAYS: 
+ - INLINE => não é modificada por outros  valores, ocupa o seu próprio conteúdo, fica em uma única  linha;
+ - BLOCK => Aceita popriedades como largura e ocupa todo o conteúdo da largura, empurrando para baixo outros elementos.
+ - FLEX =>  permite que o conteúdo receba diversas propriedades como: alinhamentos (verticais e horizontais)
+ - GRID ?
+
+
+
+
+*/
